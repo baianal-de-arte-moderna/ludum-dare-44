@@ -7,12 +7,15 @@ using UnityEngine.SceneManagement;
 public class Scene1Script : MonoBehaviour
 {
     public GameObject playerSpawn;
+    public int bg;
 
     // Start is called before the first frame update
     void Start()
     {
         SceneManager.sceneLoaded += SetPlayerScript;
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
+
+        SceneManager.LoadScene(bg, LoadSceneMode.Additive);
     }
 
     public void SetPlayerScript(Scene scene, LoadSceneMode mode)
