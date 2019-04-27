@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerAttributes))]
 public class PlayerScript : MonoBehaviour
@@ -27,6 +28,10 @@ public class PlayerScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         grounded = true;
+        if (collision.CompareTag("KillPlane"))
+        {
+            Die();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -57,5 +62,11 @@ public class PlayerScript : MonoBehaviour
     private void OnMoveStop()
     {
         rigid.velocity = new Vector2(Mathf.Lerp(rigid.velocity.x, 0f, 0.1f), rigid.velocity.y);
+    }
+
+    void Die()
+    {
+        // TODO: die direito
+        SceneManager.LoadScene(0);
     }
 }
