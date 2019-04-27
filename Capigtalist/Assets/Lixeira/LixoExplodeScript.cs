@@ -21,26 +21,33 @@ public class LixoExplodeScript : MonoBehaviour
             direction.x,
             Mathf.Abs(direction.y)
         ).normalized;
-        force = 200f;
+        force = 400f;
+        vanishSpeed = Random.Range(0.015f, 0.02f);
         active = false;
     }
 
     void FixedUpdate()
     {
-        render.color = Color.Lerp (
-            render.color,
-            Color.clear,
-            vanishSpeed
-        );
-        if (render.color.a < 0.2f)
+        if (active)
         {
-            Destroy(gameObject);
+            render.color = Color.Lerp (
+                render.color,
+                Color.clear,
+                vanishSpeed
+            );
+            if (render.color.a < 0.1f)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
     public void Explode()
     {
         render.enabled = true;
+        transform.position = transform.parent.position;
+        rigid.WakeUp();
         rigid.AddForce(direction * rigid.mass * force);
+        active = true;
     }
 }
