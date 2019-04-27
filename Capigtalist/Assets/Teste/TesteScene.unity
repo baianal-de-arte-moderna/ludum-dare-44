@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1837365574}
   - component: {fileID: 1837365573}
   - component: {fileID: 1837365572}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ChaoTeste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
