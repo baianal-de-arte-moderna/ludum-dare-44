@@ -15,7 +15,7 @@ public class Scene1Script : MonoBehaviour
         SceneManager.sceneLoaded += SetPlayerScript;
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
 
-        SceneManager.LoadScene(bg, LoadSceneMode.Additive);
+        if (bg > 0) SceneManager.LoadScene(bg, LoadSceneMode.Additive);
     }
 
     public void SetPlayerScript(Scene scene, LoadSceneMode mode)

@@ -15653,7 +15653,7 @@ GameObject:
   - component: {fileID: 1151418497}
   - component: {fileID: 1151418498}
   m_Layer: 14
-  m_Name: SecondWaterfall (1)
+  m_Name: ThirdWaterfall
   m_TagString: KillPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15729,6 +15729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawn: {fileID: 276062784}
+  bg: 2
 --- !u!4 &1317974191
 Transform:
   m_ObjectHideFlags: 0
