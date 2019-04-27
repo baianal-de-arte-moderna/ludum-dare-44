@@ -16,11 +16,19 @@ public class Scene1Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine("spawner");
+    }
+
+    IEnumerator spawner()
+    {
         SceneManager.sceneLoaded += SetPlayerScript;
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
 
         // BG
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
+
+        //Wait for 2 seconds
+        yield return new WaitForSeconds(0.5f);
 
         if (lixeiraSpawn.Length > 0)
         {
@@ -29,6 +37,7 @@ public class Scene1Script : MonoBehaviour
             foreach (var l in lixeiraSpawn)
             {
                 SceneManager.LoadScene(3, LoadSceneMode.Additive);
+                yield return new WaitForSeconds(0.1f);
             }
         }
         //if (cachorroSpawn.Length > 0)
