@@ -42,6 +42,10 @@ public class PlayerScript : MonoBehaviour
         {
             Die();
         }
+        if (collision.CompareTag("CollectMoney"))
+        {
+            playerAttributes.AddMoney(1);
+        }
     }
 
     public Vector2 GetCenter()
