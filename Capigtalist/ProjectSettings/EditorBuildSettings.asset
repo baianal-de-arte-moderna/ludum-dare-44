@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Menus/Upgrades/UpgradesScene.unity
     guid: 5cb88aa5209db47548cc0ce224f722ee
+  - enabled: 1
+    path: Assets/Boss/Boss.unity
+    guid: 4b2e600dc03bf42d4ba0afb98667db65
   m_configObjects: {}

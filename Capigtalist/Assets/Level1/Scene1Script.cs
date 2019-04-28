@@ -19,10 +19,16 @@ public class Scene1Script : MonoBehaviour
     [Header("Collect Fields")]
     public Transform[] moedaSpawn;
 
+    [Space(10)]
+    [Header("Boss Fields")]
+    public Transform bossSpawn;
+
     int lixeiraIndex;
     int cachorroIndex;
     int moedaIndex;
     
+    [Space(10)]
+    [Header("Loading Fields")]
     public LoadingScreenScript loadingScreen;
 
     // Start is called before the first frame update
@@ -35,6 +41,11 @@ public class Scene1Script : MonoBehaviour
     {
         SceneManager.sceneLoaded += SetPlayerScript;
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
+
+        yield return new WaitForSeconds(0.05f);
+
+        SceneManager.sceneLoaded += SetBossScript;
+        SceneManager.LoadScene(9, LoadSceneMode.Additive);
 
         // BG
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
@@ -89,6 +100,12 @@ public class Scene1Script : MonoBehaviour
         SceneManager.sceneLoaded -= SetPlayerScript;
         var rootObject = scene.GetRootGameObjects()[0];
         rootObject.transform.position = playerSpawn.position;
+    }
+    public void SetBossScript(Scene scene, LoadSceneMode mode)
+    {
+        SceneManager.sceneLoaded -= SetBossScript;
+        var rootObject = scene.GetRootGameObjects()[0];
+        rootObject.transform.position = bossSpawn.position;
     }
     public void SetLixeiraScript(Scene scene, LoadSceneMode mode)
     {
