@@ -6,13 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class Scene1Script : MonoBehaviour
 {
+    [Header("Player Fields")]
     public Transform playerSpawn;
+
+    [Space(10)]
+    [Header("Enemy Fields")]
     public Transform[] lixeiraSpawn;
     public Transform[] cachorroSpawn;
     public Transform[] abelhaSpawn;
 
+    [Space(10)]
+    [Header("Collect Fields")]
+    public Transform[] moedaSpawn;
+
     int lixeiraIndex;
     int cachorroIndex;
+    int moedaIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +37,7 @@ public class Scene1Script : MonoBehaviour
         // BG
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
 
-        //Wait for 0.5 seconds
+        //Wait to start Lixeira
         yield return new WaitForSeconds(0.05f);
 
         if (lixeiraSpawn.Length > 0)
@@ -42,6 +51,7 @@ public class Scene1Script : MonoBehaviour
             }
         }
 
+        //Wait to start Cachorro
         yield return new WaitForSeconds(0.05f);
 
         if (cachorroSpawn.Length > 0)
@@ -51,6 +61,20 @@ public class Scene1Script : MonoBehaviour
             foreach (var l in cachorroSpawn)
             {
                 SceneManager.LoadScene(4, LoadSceneMode.Additive);
+                yield return new WaitForSeconds(0.01f);
+            }
+        }
+
+        //Wait to start Collectibol
+        yield return new WaitForSeconds(0.05f);
+
+        if (moedaSpawn.Length > 0)
+        {
+            moedaIndex = 0;
+            SceneManager.sceneLoaded += SetMoedaScript;
+            foreach (var l in moedaSpawn)
+            {
+                SceneManager.LoadScene(5, LoadSceneMode.Additive);
                 yield return new WaitForSeconds(0.01f);
             }
         }
@@ -80,6 +104,16 @@ public class Scene1Script : MonoBehaviour
         if (cachorroIndex >= cachorroSpawn.Length)
         {
             SceneManager.sceneLoaded -= SetCachorroScript;
+        }
+    }
+    public void SetMoedaScript(Scene scene, LoadSceneMode mode)
+    {
+        var rootObject = scene.GetRootGameObjects()[0];
+        rootObject.transform.position = moedaSpawn[moedaIndex].position;
+        moedaIndex++;
+        if (moedaIndex >= moedaSpawn.Length)
+        {
+            SceneManager.sceneLoaded -= SetMoedaScript;
         }
     }
 }
