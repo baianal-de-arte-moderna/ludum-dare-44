@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class JumpBehaviour : MonoBehaviour
+public abstract class JumpBehaviour
 {
     public void Jump(Rigidbody2D rigid, PlayerAttributes playerAttributes)
     {
