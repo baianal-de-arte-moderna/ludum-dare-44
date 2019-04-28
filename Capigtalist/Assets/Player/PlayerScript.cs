@@ -29,7 +29,7 @@ public class PlayerScript : MonoBehaviour
         playerAttributes = GetComponent<PlayerAttributes>();
         playerRenderer = GetComponent<SpriteRenderer>();
 
-        jumpBehaviour = GameData.jumpBehaviour;
+        jumpBehaviour = PlayerAttributes.jumpBehaviour;
     }
 
     private void Start()

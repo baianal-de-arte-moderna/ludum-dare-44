@@ -14,20 +14,20 @@ public class HudScript : MonoBehaviour
     {
         playerAttributes = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>();
         playerAttributes.OnPlayerHealthChange += HealthHudUpdate;
-        float newYPosition = CalculateYPosition(playerAttributes.hp);
-        transform.localPosition = new Vector3(X_FIXED_POS, CalculateYPosition(playerAttributes.hp), 0f);
+        float newYPosition = CalculateYPosition(PlayerAttributes.hp);
+        transform.localPosition = new Vector3(X_FIXED_POS, CalculateYPosition(PlayerAttributes.hp), 0f);
     }
 
     void HealthHudUpdate()
     {
-        Vector3 newPos = new Vector3(X_FIXED_POS, CalculateYPosition(playerAttributes.hp), 0f);
+        Vector3 newPos = new Vector3(X_FIXED_POS, CalculateYPosition(PlayerAttributes.hp), 0f);
         Debug.Log("UPDATING HEALTH WITH "+newPos.ToString());
         transform.localPosition = newPos;
     }
 
     float CalculateYPosition(float hp)
     {
-        float hpPercentage = playerAttributes.hp / playerAttributes.maxHp;
+        float hpPercentage = PlayerAttributes.hp / PlayerAttributes.maxHp;
         return MIN_Y_POS + (hpPercentage * Y_RANGE);
     }
 }
