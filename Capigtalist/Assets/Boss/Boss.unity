@@ -133,7 +133,9 @@ GameObject:
   - component: {fileID: 237815744}
   - component: {fileID: 237815745}
   - component: {fileID: 237815747}
+  - component: {fileID: 237815748}
   - component: {fileID: 237815746}
+  - component: {fileID: 237815749}
   m_Layer: 12
   m_Name: Boss
   m_TagString: Untagged
@@ -221,7 +223,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: 77e8e1d7a3a4a4653a6bba48335e0b4b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -262,13 +264,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 237815741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49401ce0a7d314a0fb344d8e09f6e6d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e002712c53ec4187a00e2d5aef737e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hammerPrefab: {fileID: 3017886991928695846, guid: 76c7aa192e8914be3a2564ec8e9921df,
-    type: 3}
-  sicklePrefab: {fileID: 672170721899763427, guid: 9d456043aaa9848d898fce5df278c125,
-    type: 3}
 --- !u!114 &237815747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,11 +281,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 5
   invincibilityCooldownMillis: 1000
-  speed: 10
+  horizontalSpeed: 3
+  verticalSpeed: 5
   hammerSpeed: 5
   hammerCooldownMillis: 5000
   sickleSpeed: 5
   sickleCooldownMillis: 5000
+--- !u!114 &237815748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237815741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8902f3724eb8145c2b430895985f8575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammerPrefab: {fileID: 3017886991928695846, guid: 76c7aa192e8914be3a2564ec8e9921df,
+    type: 3}
+  sicklePrefab: {fileID: 672170721899763427, guid: 9d456043aaa9848d898fce5df278c125,
+    type: 3}
+--- !u!114 &237815749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237815741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d3763c499d54ca8a5bc471d3de586a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1415217113
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,9 +326,8 @@ GameObject:
   - component: {fileID: 1415217114}
   - component: {fileID: 1415217115}
   - component: {fileID: 1415217116}
-  - component: {fileID: 1415217117}
   m_Layer: 9
-  m_Name: HammerRadar
+  m_Name: RadarFar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -346,19 +372,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1415217113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9583d0033c2c3491e82a474a7ce13641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1415217117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415217113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9583d0033c2c3491e82a474a7ce13641, type: 3}
+  m_Script: {fileID: 11500000, guid: c22aa3d1722984bb7aa60879fef72bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1714541166
@@ -372,9 +386,8 @@ GameObject:
   - component: {fileID: 1714541167}
   - component: {fileID: 1714541168}
   - component: {fileID: 1714541169}
-  - component: {fileID: 1714541170}
   m_Layer: 9
-  m_Name: SickleRadar
+  m_Name: RadarNear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,19 +432,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714541166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a1b64c838e544bd79fdf569470f4e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1714541170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714541166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a1b64c838e544bd79fdf569470f4e54, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f2e1aea3e3694c5ca9f17e3d286015e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1873162179

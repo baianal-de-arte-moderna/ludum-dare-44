@@ -5,7 +5,8 @@ public class BossAttributes : MonoBehaviour
     public int hitPoints;
     public int invincibilityCooldownMillis;
 
-    public float speed;
+    public float horizontalSpeed;
+    public float verticalSpeed;
 
     public float hammerSpeed;
     public int hammerCooldownMillis;
