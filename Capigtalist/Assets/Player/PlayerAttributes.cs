@@ -6,10 +6,22 @@ public class PlayerAttributes : MonoBehaviour
 {
     public float speed;
     public float hp;
+    public float maxHp;
     public int invincibilityCooldownMillis;
 
-    public void AddMoney(int value)
+    public delegate void PlayerHealthChange();
+    public PlayerHealthChange OnPlayerHealthChange;
+
+    public void HealthChange(int value)
     {
-        hp += value;
+        if (hp + value > maxHp)
+        {
+            hp = maxHp;
+        }
+        else
+        {
+            hp += value;
+        }
+        OnPlayerHealthChange?.Invoke();
     }
 }

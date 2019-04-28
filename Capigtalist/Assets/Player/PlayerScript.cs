@@ -46,7 +46,7 @@ public class PlayerScript : MonoBehaviour
         }
         if (collision.CompareTag("CollectMoney"))
         {
-            playerAttributes.AddMoney(1);
+            playerAttributes.HealthChange(1);
         }
     }
 
