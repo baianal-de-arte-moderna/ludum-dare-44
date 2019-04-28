@@ -22,6 +22,7 @@ public class Scene1Script : MonoBehaviour
     int lixeiraIndex;
     int cachorroIndex;
     int moedaIndex;
+    
 
     // Start is called before the first frame update
     void Start()
