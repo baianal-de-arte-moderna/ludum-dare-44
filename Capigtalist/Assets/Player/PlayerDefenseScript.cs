@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerDefenseScript : MonoBehaviour
 {
     private PlayerAttributes playerAttributes;
-    private PlayerScript playerScript;
     private SpriteRenderer playerRenderer;
 
     private bool isInvincible = false;
@@ -14,7 +13,6 @@ public class PlayerDefenseScript : MonoBehaviour
     {
         playerAttributes = GetComponent<PlayerAttributes>();
         playerRenderer = GetComponent<SpriteRenderer>();
-        playerScript = GetComponent<PlayerScript>();
     }
 
     private void Start()
@@ -46,11 +44,7 @@ public class PlayerDefenseScript : MonoBehaviour
                 isInvincible = false;
             });
 
-            playerAttributes.hp--;
-            if (playerAttributes.hp <= 0)
-            {
-                playerScript.Die();
-            }
+            playerAttributes.HealthChange(-1);
         }
     }
 }
