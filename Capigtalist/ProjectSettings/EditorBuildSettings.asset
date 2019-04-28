@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cachorro/CachorroScene.unity
     guid: c50a9902ca800e74082df13f617989e1
+  - enabled: 1
+    path: Assets/Collectibles/CollectibleCoin.unity
+    guid: a04f13e8df6839b4a93dda9fe3f793b6
   m_configObjects: {}
