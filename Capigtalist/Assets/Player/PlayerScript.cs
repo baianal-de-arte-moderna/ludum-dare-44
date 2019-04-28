@@ -80,7 +80,7 @@ public class PlayerScript : MonoBehaviour
         rigid.velocity = new Vector2(Mathf.Lerp(rigid.velocity.x, 0f, 0.1f), rigid.velocity.y);
     }
 
-    void Die()
+    public void Die()
     {
         // TODO: die direito
         SceneManager.LoadScene(0);
