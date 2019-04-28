@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Collectibles/CollectibleCoin.unity
     guid: a04f13e8df6839b4a93dda9fe3f793b6
+  - enabled: 1
+    path: Assets/Menus/Main/MainMenu.unity
+    guid: 65e552ee8a54c495c9cccf5aebeed75e
+  - enabled: 1
+    path: Assets/Menus/GameOver/GameOverScene.unity
+    guid: cd74c7d1e217b42dd8d0b43628fcec43
+  - enabled: 1
+    path: Assets/Menus/Upgrades/UpgradesScene.unity
+    guid: 5cb88aa5209db47548cc0ce224f722ee
   m_configObjects: {}

@@ -10,7 +10,9 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rigid;
     private PlayerAttributes playerAttributes;
     private SpriteRenderer playerRenderer;
-    PlayerFeetScript feet;
+    private PlayerFeetScript feet;
+
+    private JumpBehaviour jumpBehaviour;
 
     private bool grounded
     {
@@ -26,6 +28,8 @@ public class PlayerScript : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         playerAttributes = GetComponent<PlayerAttributes>();
         playerRenderer = GetComponent<SpriteRenderer>();
+
+        jumpBehaviour = GameData.jumpBehaviour;
     }
 
     private void Start()
@@ -59,7 +63,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (grounded)
         {
-            rigid.velocity = new Vector2(rigid.velocity.x, playerAttributes.speed * rigid.gravityScale / 2);
+            jumpBehaviour.Jump(rigid, playerAttributes);
         }
     }
 
