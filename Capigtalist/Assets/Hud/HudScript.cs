@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class HudScript : MonoBehaviour
 {
-    private const float MIN_Y_POS = -3.3f;
-    private const float MAX_Y_POS = 4.3f;
-    private const float Y_RANGE = MAX_Y_POS - MIN_Y_POS;
-    private const float X_FIXED_POS = -11.2f;
+    private RectTransform rectTransform;
     private PlayerAttributes playerAttributes;
 
-    void Start()
+    private float minY;
+    private float maxY;
+
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        minY = rectTransform.localPosition.y;
+        maxY = 0;
+    }
+
+    private void Start()
     {
         playerAttributes = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>();
         playerAttributes.OnPlayerHealthChange += HealthHudUpdate;
-        float newYPosition = CalculateYPosition(playerAttributes.hp);
-        transform.localPosition = new Vector3(X_FIXED_POS, CalculateYPosition(playerAttributes.hp), 0f);
+        HealthHudUpdate();
     }
 
-    void HealthHudUpdate()
+    private void HealthHudUpdate()
     {
-        Vector3 newPos = new Vector3(X_FIXED_POS, CalculateYPosition(playerAttributes.hp), 0f);
-        transform.localPosition = newPos;
-    }
+        float hpFraction = playerAttributes.hp / playerAttributes.maxHp;
 
-    float CalculateYPosition(float hp)
-    {
-        float hpPercentage = playerAttributes.hp / playerAttributes.maxHp;
-        return MIN_Y_POS + (hpPercentage * Y_RANGE);
+        Vector3 vector = rectTransform.localPosition;
+        vector.Set(vector.x, minY + (maxY - minY) * hpFraction, vector.z);
+        rectTransform.localPosition = vector;
     }
 }
