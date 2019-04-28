@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-public class GameData : MonoBehaviour
+public static class GameData
 {
+    public static float hp = 5;
+    public static float maxHp = 10;
     public static JumpBehaviour jumpBehaviour = new RegularJumpBehaviour();
 }
