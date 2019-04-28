@@ -82,7 +82,6 @@ public class PlayerScript : MonoBehaviour
 
     public void Die()
     {
-        // TODO: die direito
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("GameOverScene");
     }
 }
