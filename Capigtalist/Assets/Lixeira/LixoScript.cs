@@ -26,7 +26,6 @@ public class LixoScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(other.gameObject.name);
         col.enabled = false;
         render.enabled = false;
         foreach(var piece in explosionPieces)

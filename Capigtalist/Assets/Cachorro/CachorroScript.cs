@@ -28,7 +28,8 @@ public class CachorroScript : MonoBehaviour
         if (state == CachorroStates.RUNNING)
         {
             rigid.velocity = new Vector2(-inimigoBase.speed, rigid.velocity.y);
-        } else if (state == CachorroStates.ATTACKING)
+        } 
+        else if (state == CachorroStates.ATTACKING)
         {
             TriggerCollider.enabled = false;
             rigid.AddForce(LeapDirection.normalized * inimigoBase.speed * rigid.mass * 100f);
@@ -57,7 +58,10 @@ public class CachorroScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        TriggerCollider.enabled = false;
-        state = CachorroStates.ATTACKING;
+        if (other.CompareTag("Player"))
+        {
+            TriggerCollider.enabled = false;
+            state = CachorroStates.ATTACKING;
+        }
     }
 }
