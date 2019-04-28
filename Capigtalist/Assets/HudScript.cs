@@ -21,7 +21,6 @@ public class HudScript : MonoBehaviour
     void HealthHudUpdate()
     {
         Vector3 newPos = new Vector3(X_FIXED_POS, CalculateYPosition(playerAttributes.hp), 0f);
-        Debug.Log("UPDATING HEALTH WITH "+newPos.ToString());
         transform.localPosition = newPos;
     }
 
