@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoadingScreenScript : MonoBehaviour
 {
     TextLoadingScript textLoading;
-    RectTransform panel;
+    public RectTransform panel;
 
     Vector2 panelPos;
 
@@ -21,14 +21,13 @@ public class LoadingScreenScript : MonoBehaviour
             panelPos,
             0.1f
         );
-        if (1920f > panel.offsetMax.x)
+        if (-1920f > panel.offsetMax.x)
         {
             Destroy(gameObject);
         }
     }
     public void EndLoading()
     {
-        textLoading.Disable();
         panelPos.x = -2000f;
     }
 }

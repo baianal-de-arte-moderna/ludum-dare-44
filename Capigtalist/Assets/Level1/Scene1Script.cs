@@ -23,6 +23,7 @@ public class Scene1Script : MonoBehaviour
     int cachorroIndex;
     int moedaIndex;
     
+    public LoadingScreenScript loadingScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +80,8 @@ public class Scene1Script : MonoBehaviour
                 yield return new WaitForSeconds(0.01f);
             }
         }
+
+        loadingScreen.EndLoading();
     }
 
     public void SetPlayerScript(Scene scene, LoadSceneMode mode)
