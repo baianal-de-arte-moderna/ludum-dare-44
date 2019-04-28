@@ -13,12 +13,15 @@ public class PlayerScript : MonoBehaviour
 
     private bool grounded;
 
-    private void Start()
+    private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         playerAttributes = GetComponent<PlayerAttributes>();
         playerRenderer = GetComponent<SpriteRenderer>();
+    }
 
+    private void Start()
+    {
         input.OnJumpInputEvent += OnJump;
         input.OnMoveLeftInputEvent += OnMoveLeft;
         input.OnMoveRightInputEvent += OnMoveRight;
@@ -37,6 +40,11 @@ public class PlayerScript : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         grounded = false;
+    }
+
+    public Vector2 GetCenter()
+    {
+        return playerRenderer.bounds.center;
     }
 
     private void OnJump()

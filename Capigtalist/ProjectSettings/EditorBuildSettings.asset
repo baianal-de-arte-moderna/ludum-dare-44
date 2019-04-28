@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level1BG/Background.unity
     guid: 47ae07ed69fd05c489b21c8e22aff80f
+  - enabled: 1
+    path: Assets/Lixeira/LixeiraScene.unity
+    guid: 7a1fed93d8f73484d98c5ad6abaefc1b
   m_configObjects: {}

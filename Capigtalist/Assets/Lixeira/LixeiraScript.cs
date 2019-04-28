@@ -54,15 +54,18 @@ public class LixeiraScript : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        TriggerCollider.enabled = false;
-        // Lock on player
-        var distance = other.transform.position.x - transform.position.x;
-        AttackDirection = new Vector2(
-            distance,
-            ThrowHeight
-        ).normalized;
-        AttackForce = Mathf.Abs(AttackForceConstant * distance);
-        
-        state = LixeiraStates.ATTACKING;
+        if (other.CompareTag("Player"))
+        {
+            TriggerCollider.enabled = false;
+            // Lock on player
+            var distance = other.transform.position.x - transform.position.x;
+            AttackDirection = new Vector2(
+                distance,
+                ThrowHeight
+            ).normalized;
+            AttackForce = Mathf.Abs(AttackForceConstant * distance);
+            
+            state = LixeiraStates.ATTACKING;
+        }
     }
 }
