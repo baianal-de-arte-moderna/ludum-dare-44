@@ -5,12 +5,12 @@ public class UpgradesScript : MonoBehaviour
 {
     public void OnRegularJumpButtonClicked()
     {
-        GameData.jumpBehaviour = new RegularJumpBehaviour();
+        PlayerAttributes.jumpBehaviour = new RegularJumpBehaviour();
     }
 
     public void OnSpringJumpButtonClicked()
     {
-        GameData.jumpBehaviour = new SpringJumpBehaviour();
+        PlayerAttributes.jumpBehaviour = new SpringJumpBehaviour();
     }
 
     public void OnPlayButtonClicked()

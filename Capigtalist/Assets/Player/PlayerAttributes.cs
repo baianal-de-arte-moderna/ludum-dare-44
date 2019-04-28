@@ -4,29 +4,24 @@ using UnityEngine;
 
 public class PlayerAttributes : MonoBehaviour
 {
-    public float speed;
-    public float hp;
-    public float maxHp;
-    private static float MIN_HP = -1f;
-    public int invincibilityCooldownMillis;
+    public static int hp = 5;
+    public static int maxHp = 10;
+    public static JumpBehaviour jumpBehaviour = new RegularJumpBehaviour();
 
     public delegate void PlayerHealthChange();
     public PlayerHealthChange OnPlayerHealthChange;
-    public delegate void PlayerDeath();
-    public PlayerDeath OnPlayerDeath;
+    public PlayerHealthChange OnPlayerDeath;
+
+    public float speed;
+
+    public int invincibilityCooldownMillis;
 
     public void HealthChange(int value)
     {
-        if (hp + value > maxHp)
-        {
-            hp = maxHp;
-        }
-        else
-        {
-            hp += value;
-        }
+        hp = Mathf.Min(hp + value, maxHp);
         OnPlayerHealthChange?.Invoke();
-        if (hp <= MIN_HP)
+
+        if (hp < 0)
         {
             OnPlayerDeath?.Invoke();
         }
