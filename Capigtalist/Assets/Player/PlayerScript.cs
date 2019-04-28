@@ -34,7 +34,7 @@ public class PlayerScript : MonoBehaviour
         input.OnMoveLeftInputEvent += OnMoveLeft;
         input.OnMoveRightInputEvent += OnMoveRight;
         input.OnMoveStopInputEvent += OnMoveStop;
-
+        playerAttributes.OnPlayerDeath += Die;
         feet.onBounce += OnJump;
     }
 
@@ -46,7 +46,7 @@ public class PlayerScript : MonoBehaviour
         }
         if (collision.CompareTag("CollectMoney"))
         {
-            playerAttributes.AddMoney(1);
+            playerAttributes.HealthChange(1);
         }
     }
 
