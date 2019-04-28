@@ -6,6 +6,6 @@ public class SpringJumpBehaviour : JumpBehaviour
 {
     protected override float JumpModifier()
     {
-        return 1.5f;
+        return 1.2f;
     }
 }
