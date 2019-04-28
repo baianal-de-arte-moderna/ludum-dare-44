@@ -8,7 +8,7 @@ public class BossDefenseScript : BossScript
     private void Start()
     {
         HeadScript headScript = GetComponentInChildren<HeadScript>();
-        headScript.OnPlayerHit += OnPlayerHit;
+        headScript.OnHeadTouch += OnPlayerHit;
     }
 
     private void FixedUpdate()

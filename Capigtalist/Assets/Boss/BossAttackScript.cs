@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class BossAttackScript : BossScript
 {
+    public delegate void OnHammerEvent();
+    public event OnHammerEvent OnHammerThrow;
+    public event OnHammerEvent OnHammerRecover;
+
+    public delegate void OnSickleEvent();
+    public event OnSickleEvent OnSickleThrow;
+    public event OnSickleEvent OnSickleRecover;
+
     [SerializeField]
     private Throwable hammerPrefab;
     [SerializeField]
@@ -27,6 +35,7 @@ public class BossAttackScript : BossScript
         {
             Throw(hammerPrefab, playerScript, bossAttributes.hammerSpeed, bossAttributes.hammerCooldownMillis, RecoverHammer);
             hasHammer = false;
+            OnHammerThrow?.Invoke();
         }
     }
 
@@ -36,6 +45,7 @@ public class BossAttackScript : BossScript
         {
             Throw(sicklePrefab, playerScript, bossAttributes.sickleSpeed, bossAttributes.hammerCooldownMillis, RecoverSickle);
             hasSickle = false;
+            OnSickleThrow?.Invoke();
         }
     }
 
@@ -62,10 +72,12 @@ public class BossAttackScript : BossScript
     private void RecoverHammer()
     {
         hasHammer = true;
+        OnHammerRecover?.Invoke();
     }
 
     private void RecoverSickle()
     {
         hasSickle = true;
+        OnSickleRecover?.Invoke();
     }
 }
