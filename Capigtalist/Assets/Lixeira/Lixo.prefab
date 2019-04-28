@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 3295767348558373391}
   - component: {fileID: 3295767348558373390}
   - component: {fileID: 2403906284791611061}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lixo_explode1_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 3295767348611594905}
   - component: {fileID: 3295767348611594904}
   - component: {fileID: 4731189737608190715}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lixo_explode1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 3295767349102757827}
   - component: {fileID: 3295767349102757826}
   - component: {fileID: 6516664490851812775}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lixo_explode1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 3295767349480101829}
   - component: {fileID: 3295767349480101828}
   - component: {fileID: 2783528738757635244}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lixo_explode1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 3295767349741613389}
   - component: {fileID: 3295767349741613388}
   - component: {fileID: 5707698156173069437}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lixo_explode1_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -869,7 +869,7 @@ GameObject:
   - component: {fileID: 3295767349810434105}
   - component: {fileID: 3295767349810434104}
   - component: {fileID: 67454961686649298}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lixo_explode1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 3295767349859401861}
   - component: {fileID: 3295767349859401860}
   - component: {fileID: 6894058417569253685}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lixo_explode1_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}

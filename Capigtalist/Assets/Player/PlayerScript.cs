@@ -34,6 +34,8 @@ public class PlayerScript : MonoBehaviour
         input.OnMoveLeftInputEvent += OnMoveLeft;
         input.OnMoveRightInputEvent += OnMoveRight;
         input.OnMoveStopInputEvent += OnMoveStop;
+
+        feet.onBounce += OnJump;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
