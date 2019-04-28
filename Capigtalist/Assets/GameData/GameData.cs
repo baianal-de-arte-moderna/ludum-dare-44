@@ -2,5 +2,5 @@
 
 public class GameData : MonoBehaviour
 {
-    public static JumpBehaviour jumpBehaviour;
+    public static JumpBehaviour jumpBehaviour = new RegularJumpBehaviour();
 }
