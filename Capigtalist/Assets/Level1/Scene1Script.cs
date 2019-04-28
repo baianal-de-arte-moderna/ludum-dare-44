@@ -45,7 +45,7 @@ public class Scene1Script : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
 
         SceneManager.sceneLoaded += SetBossScript;
-        SceneManager.LoadScene(9, LoadSceneMode.Additive);
+        SceneManager.LoadScene(10, LoadSceneMode.Additive);
 
         // BG
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
@@ -93,6 +93,9 @@ public class Scene1Script : MonoBehaviour
         }
 
         loadingScreen.EndLoading();
+
+        // HUD
+        SceneManager.LoadScene(6, LoadSceneMode.Additive);
     }
 
     public void SetPlayerScript(Scene scene, LoadSceneMode mode)
