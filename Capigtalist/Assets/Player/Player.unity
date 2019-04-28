@@ -509,16 +509,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4910816968072258756, guid: 3831da244829a44fe866c197cb80368c,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4910816968072258758, guid: 3831da244829a44fe866c197cb80368c,
         type: 3}
       propertyPath: input
       value: 
       objectReference: {fileID: 2033355693}
+    - target: {fileID: 4910816968072258756, guid: 3831da244829a44fe866c197cb80368c,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6478477860308742288, guid: 3831da244829a44fe866c197cb80368c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3831da244829a44fe866c197cb80368c, type: 3}
@@ -544,6 +544,25 @@ CapsuleCollider2D:
   m_Offset: {x: -0.02066833, y: 0.5108604}
   m_Size: {x: 1.2697464, y: 1.021727}
   m_Direction: 1
+--- !u!1 &1104086725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8261150363679678669, guid: 3831da244829a44fe866c197cb80368c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1104086722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1104086726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104086725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7000760423df894b9ecf3af07172282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grounded: 1
 --- !u!4 &1937448836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4910816968072258759, guid: 3831da244829a44fe866c197cb80368c,

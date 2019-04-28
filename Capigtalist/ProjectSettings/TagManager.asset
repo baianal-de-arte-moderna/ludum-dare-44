@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CameraCollider
   - KillPlane
+  - Floor
   layers:
   - Default
   - TransparentFX

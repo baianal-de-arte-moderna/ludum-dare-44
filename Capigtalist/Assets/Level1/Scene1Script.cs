@@ -29,7 +29,7 @@ public class Scene1Script : MonoBehaviour
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
 
         //Wait for 0.5 seconds
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.05f);
 
         if (lixeiraSpawn.Length > 0)
         {
@@ -38,11 +38,11 @@ public class Scene1Script : MonoBehaviour
             foreach (var l in lixeiraSpawn)
             {
                 SceneManager.LoadScene(3, LoadSceneMode.Additive);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.01f);
             }
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.05f);
 
         if (cachorroSpawn.Length > 0)
         {
@@ -51,7 +51,7 @@ public class Scene1Script : MonoBehaviour
             foreach (var l in cachorroSpawn)
             {
                 SceneManager.LoadScene(4, LoadSceneMode.Additive);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.01f);
             }
         }
     }

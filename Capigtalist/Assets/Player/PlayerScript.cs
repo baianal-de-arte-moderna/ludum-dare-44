@@ -10,11 +10,19 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rigid;
     private PlayerAttributes playerAttributes;
     private SpriteRenderer playerRenderer;
+    PlayerFeetScript feet;
 
-    private bool grounded;
+    private bool grounded
+    {
+        get
+        {
+            return feet.grounded;
+        }
+    }
 
     private void Awake()
     {
+        feet = GetComponentInChildren<PlayerFeetScript>();
         rigid = GetComponent<Rigidbody2D>();
         playerAttributes = GetComponent<PlayerAttributes>();
         playerRenderer = GetComponent<SpriteRenderer>();
@@ -30,16 +38,10 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        grounded = true;
         if (collision.CompareTag("KillPlane"))
         {
             Die();
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        grounded = false;
     }
 
     public Vector2 GetCenter()
