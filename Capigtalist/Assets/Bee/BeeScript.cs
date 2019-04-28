@@ -67,7 +67,7 @@ public class BeeScript : MonoBehaviour
                 }
                 shouldChangeVelocity = (shouldChangeVelocity + 1) % velocityChangeFrequency;
 
-                if (velX > 0) 
+                if (velX > 0)
                 {
                     if (transform.position.x + velX > rightBound)
                     {
@@ -98,10 +98,10 @@ public class BeeScript : MonoBehaviour
                 }
 
                 vector.Set(velX, velY);
-                body.velocity = vector; 
+                body.velocity = vector;
                 break;
 
-            case BeeState.ATTACKING: 
+            case BeeState.ATTACKING:
             {
                 Vector2 direction = playerPosition - transform.position;
                 body.velocity = direction.normalized * attackVelocity;
@@ -109,7 +109,7 @@ public class BeeScript : MonoBehaviour
                 break;
             }
 
-            case BeeState.START_RECOVER: 
+            case BeeState.START_RECOVER:
             {
                 Vector2 direction = initialPos - transform.position;
                 body.velocity = direction.normalized * 20f;
@@ -118,7 +118,7 @@ public class BeeScript : MonoBehaviour
             }
 
             case BeeState.RECOVERING:
-                if (transform.position.y > initialPos.y) 
+                if (transform.position.y > initialPos.y)
                 {
                     state = BeeState.FLYING;
                     shouldDamage = true;
@@ -164,12 +164,6 @@ public class BeeScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (shouldDamage && other.collider.CompareTag("Player"))
-        {
-            //TODO deal damage
-            shouldDamage = false;
-        }
-
         if (state == BeeState.ATTACKING || state == BeeState.IDLE)
         {
             state = BeeState.START_RECOVER;
