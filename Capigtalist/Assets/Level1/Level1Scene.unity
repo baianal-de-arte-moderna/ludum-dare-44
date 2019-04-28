@@ -20073,6 +20073,7 @@ MonoBehaviour:
   - {fileID: 73158627}
   - {fileID: 1166716084}
   - {fileID: 683813341}
+  bossSpawn: {fileID: 1480476909}
   loadingScreen: {fileID: 1262180338}
 --- !u!4 &1317974191
 Transform:
