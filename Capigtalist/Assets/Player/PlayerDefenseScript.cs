@@ -14,6 +14,7 @@ public class PlayerDefenseScript : MonoBehaviour
     {
         playerAttributes = GetComponent<PlayerAttributes>();
         playerRenderer = GetComponent<SpriteRenderer>();
+        playerScript = GetComponent<PlayerScript>();
     }
 
     private void Start()
@@ -26,7 +27,7 @@ public class PlayerDefenseScript : MonoBehaviour
     {
         if (isInvincible)
         {
-            playerRenderer.color = new Color(1, 1, 1, 0.5f);
+            playerRenderer.color = new Color(1, 1, 1, Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup * 15f)));
         }
         else
         {

@@ -559,7 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   hp: 5
-  invincibilityCooldownMillis: 5000
+  invincibilityCooldownMillis: 2000
 --- !u!114 &4910816969150128644
 MonoBehaviour:
   m_ObjectHideFlags: 0

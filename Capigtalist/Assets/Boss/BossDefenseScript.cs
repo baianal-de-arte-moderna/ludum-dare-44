@@ -15,7 +15,7 @@ public class BossDefenseScript : BossScript
     {
         if (isInvincible)
         {
-            bossRenderer.color = new Color(1, 1, 1, 0.5f);
+            bossRenderer.color = new Color(1, 1, 1, Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup * 15f)));
         }
         else
         {
