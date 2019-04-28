@@ -5,6 +5,8 @@ public class BossMovementScript : BossScript
 {
     private Rigidbody2D bossRigidbody;
 
+    private bool isGrounded;
+
     override protected void Awake()
     {
         base.Awake();
@@ -13,12 +15,28 @@ public class BossMovementScript : BossScript
 
     private void Start()
     {
+        BossAttackScript bossAttackScript = GetComponent<BossAttackScript>();
+        bossAttackScript.OnSickleThrow += OnSickleThrow;
+
+        FeetScript feetScript = GetComponentInChildren<FeetScript>();
+        feetScript.OnFeetTouch += OnFeetTouch;
+
         RadarFar radarFar = GetComponentInChildren<RadarFar>();
         radarFar.OnPlayerEnterRadar += OnPlayerEnterRadarFar;
         radarFar.OnPlayerLeaveRadar += OnPlayerLeaveRadarFar;
 
         RadarNear radarNear = GetComponentInChildren<RadarNear>();
-        radarNear.OnPlayerEnterRadar += OnPlayerEnterRadarNear;
+        radarNear.OnPlayerStayRadar += OnPlayerStayRadarNear;
+    }
+
+    private void OnSickleThrow()
+    {
+        Jump();
+    }
+
+    private void OnFeetTouch()
+    {
+        isGrounded = true;
     }
 
     private void OnPlayerEnterRadarFar(PlayerScript playerScript)
@@ -38,9 +56,8 @@ public class BossMovementScript : BossScript
         MoveStop();
     }
 
-    private void OnPlayerEnterRadarNear(PlayerScript playerScript)
+    private void OnPlayerStayRadarNear(PlayerScript playerScript)
     {
-        Jump();
         if (playerScript.transform.position.x < transform.position.x)
         {
             MoveRight();
@@ -53,8 +70,9 @@ public class BossMovementScript : BossScript
 
     private void Jump()
     {
-        if (true)
+        if (isGrounded)
         {
+            isGrounded = false;
             bossRigidbody.velocity = new Vector2(bossRigidbody.velocity.x, bossAttributes.verticalSpeed * bossRigidbody.gravityScale / 2);
         }
     }
