@@ -9,7 +9,7 @@ public class InimigoBaseScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((!collision.CompareTag("Feet")))
+        if (collision.CompareTag("Feet"))
         {
             Destroy(gameObject);
         }
