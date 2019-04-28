@@ -559,6 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   hp: 5
+  invincibilityCooldownMillis: 5000
 --- !u!114 &4910816969150128644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,9 +649,10 @@ GameObject:
   - component: {fileID: 4910816969150128645}
   - component: {fileID: 4910816969150128646}
   - component: {fileID: 4910816969150128651}
+  - component: {fileID: 3082020151449932022}
   - component: {fileID: 3421606661071743819}
   - component: {fileID: 4910816969150128644}
-  - component: {fileID: 3082020151449932022}
+  - component: {fileID: 4910816969150128648}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -658,6 +660,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4910816969150128648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4910816969150128647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613b3d2fd76af4b7e86cf7083a03bcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &4910816969150128651
 Rigidbody2D:
   serializedVersion: 4

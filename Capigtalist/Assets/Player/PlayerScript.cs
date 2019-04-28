@@ -35,9 +35,6 @@ public class PlayerScript : MonoBehaviour
         input.OnMoveRightInputEvent += OnMoveRight;
         input.OnMoveStopInputEvent += OnMoveStop;
 
-        PlayerWeakPoint playerWeakPoint = GetComponentInChildren<PlayerWeakPoint>();
-        playerWeakPoint.OnPlayerWeakPointTouch += OnWeakPointTouch;
-
         feet.onBounce += OnJump;
     }
 
@@ -83,12 +80,7 @@ public class PlayerScript : MonoBehaviour
         rigid.velocity = new Vector2(Mathf.Lerp(rigid.velocity.x, 0f, 0.1f), rigid.velocity.y);
     }
 
-    private void OnWeakPointTouch()
-    {
-         Die();
-    }
-
-    void Die()
+    public void Die()
     {
         // TODO: die direito
         SceneManager.LoadScene(0);
