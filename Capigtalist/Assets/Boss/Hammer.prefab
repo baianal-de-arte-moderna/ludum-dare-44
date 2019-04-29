@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2290327657691821129}
   - component: {fileID: 2290327657691821130}
   - component: {fileID: 2704323339602571106}
-  - component: {fileID: 2290327657691821131}
   - component: {fileID: 3017886991928695846}
+  - component: {fileID: 29304850293671306}
   m_Layer: 13
   m_Name: Hammer
   m_TagString: Untagged
@@ -103,22 +103,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &2290327657691821131
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2290327657691821128}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.75
 --- !u!114 &3017886991928695846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,3 +116,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
+--- !u!70 &29304850293671306
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290327657691821128}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.23311391, y: 0.31247175}
+  m_Size: {x: 0.7083897, y: 0.70839}
+  m_Direction: 0
