@@ -5,22 +5,9 @@ using UnityEngine.UI;
 public class UpgradesScript : MonoBehaviour
 {
     [SerializeField]
-    private Button regularJumpButton;
+    private UpgradeButton regularJumpButton;
     [SerializeField]
-    private Text regularJumpPriceText;
-    [SerializeField]
-    private GameObject regularJumpPricePanel;
-    [SerializeField]
-    private GameObject regularJumpInUseText;
-
-    [SerializeField]
-    private Button springJumpButton;
-    [SerializeField]
-    private Text springJumpPriceText;
-    [SerializeField]
-    private GameObject springJumpPricePanel;
-    [SerializeField]
-    private GameObject springJumpInUseText;
+    private UpgradeButton springJumpButton;
 
     private PlayerAttributes playerAttributes;
 
@@ -57,18 +44,13 @@ public class UpgradesScript : MonoBehaviour
 
     private void UpdateJumpPriceTexts()
     {
-        regularJumpPriceText.text = $"{CalculateJumpPrice(regularJumpBehaviour)}";
-        springJumpPriceText.text = $"{CalculateJumpPrice(springJumpBehaviour)}";
-
+        float regularJumpPrice = CalculateJumpPrice(regularJumpBehaviour);
         bool regularJumpSelected = GameData.jumpBehaviour.GetType() == regularJumpBehaviour.GetType();
-        regularJumpButton.interactable = !regularJumpSelected;
-        regularJumpPricePanel.SetActive(!regularJumpSelected);
-        regularJumpInUseText.SetActive(regularJumpSelected);
+        regularJumpButton.UpdateButton(regularJumpPrice, regularJumpSelected);
 
+        float springJumpPrice = CalculateJumpPrice(springJumpBehaviour);
         bool springJumpSelected = GameData.jumpBehaviour.GetType() == springJumpBehaviour.GetType();
-        springJumpButton.interactable = !springJumpSelected;
-        springJumpPricePanel.SetActive(!springJumpSelected);
-        springJumpInUseText.SetActive(springJumpSelected);
+        springJumpButton.UpdateButton(springJumpPrice, springJumpSelected);
     }
 
     private float CalculateJumpPrice(JumpBehaviour jumpBehaviour)
