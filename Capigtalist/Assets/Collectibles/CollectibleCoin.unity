@@ -130,8 +130,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1067025887}
   - component: {fileID: 1067025889}
-  - component: {fileID: 1067025888}
   - component: {fileID: 1067025890}
+  - component: {fileID: 1067025888}
   m_Layer: 0
   m_Name: monedita
   m_TagString: CollectMoney
@@ -148,13 +148,13 @@ Transform:
   m_GameObject: {fileID: 1067025886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1144268764}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1067025888
-CapsuleCollider2D:
+--- !u!58 &1067025888
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,8 +167,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.78, y: 0.95}
-  m_Direction: 0
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!212 &1067025889
 SpriteRenderer:
   m_ObjectHideFlags: 0
