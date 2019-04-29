@@ -19410,6 +19410,7 @@ MonoBehaviour:
   - {fileID: 709345687}
   - {fileID: 1137877359}
   - {fileID: 73158627}
+  listOfCollectibles: 050000000d0000000e0000000f000000
   bossSpawn: {fileID: 1480476910}
   loadingScreen: {fileID: 1262180338}
 --- !u!4 &1317974191

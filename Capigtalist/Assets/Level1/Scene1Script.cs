@@ -18,6 +18,7 @@ public class Scene1Script : MonoBehaviour
     [Space(10)]
     [Header("Collect Fields")]
     public Transform[] moedaSpawn;
+    public int[] listOfCollectibles;
 
     [Space(10)]
     [Header("Boss Fields")]
@@ -86,7 +87,8 @@ public class Scene1Script : MonoBehaviour
             SceneManager.sceneLoaded += SetMoedaScript;
             foreach (var l in moedaSpawn)
             {
-                SceneManager.LoadScene(5, LoadSceneMode.Additive);
+                var chosenOne = listOfCollectibles[Random.Range(0, listOfCollectibles.Length)];
+                SceneManager.LoadScene(chosenOne, LoadSceneMode.Additive);
                 yield return new WaitForSeconds(0.02f);
             }
         }
