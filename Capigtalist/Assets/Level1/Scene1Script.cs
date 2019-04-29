@@ -59,7 +59,7 @@ public class Scene1Script : MonoBehaviour
             foreach (var l in lixeiraSpawn)
             {
                 SceneManager.LoadScene(3, LoadSceneMode.Additive);
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.02f);
             }
         }
 
@@ -73,7 +73,7 @@ public class Scene1Script : MonoBehaviour
             foreach (var l in cachorroSpawn)
             {
                 SceneManager.LoadScene(4, LoadSceneMode.Additive);
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.02f);
             }
         }
 
@@ -87,7 +87,7 @@ public class Scene1Script : MonoBehaviour
             foreach (var l in moedaSpawn)
             {
                 SceneManager.LoadScene(5, LoadSceneMode.Additive);
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.02f);
             }
         }
 

@@ -16,23 +16,37 @@ public class CachorroScript : MonoBehaviour
     Rigidbody2D rigid;
     public Vector2 LeapDirection;
     public Collider2D TriggerCollider;
+    int direction;
+    Vector3 originalScale;
     void Awake()
     {
         inimigoBase = GetComponent<InimigoBaseScript>();
         rigid = GetComponent<Rigidbody2D>();
+
+        originalScale = transform.localScale;
+
         state = CachorroStates.WAITING;
+        direction = -1;
     }
 
     void FixedUpdate()
     {
+        direction = rigid.velocity.x > 1f? 1: -1;
+        transform.localScale = new Vector3(
+            originalScale.x * -direction,
+            originalScale.y,
+            1f);
+
         if (state == CachorroStates.RUNNING)
         {
-            rigid.velocity = new Vector2(-inimigoBase.speed, rigid.velocity.y);
+            rigid.velocity = new Vector2(inimigoBase.speed * direction, rigid.velocity.y);
         } 
         else if (state == CachorroStates.ATTACKING)
         {
             TriggerCollider.enabled = false;
-            rigid.AddForce(LeapDirection.normalized * inimigoBase.speed * rigid.mass * 100f);
+            var leapForce = LeapDirection.normalized * inimigoBase.speed * rigid.mass * 100f;
+            leapForce.x *= direction;
+            rigid.AddForce(leapForce);
             state = CachorroStates.WAITING;
             // Temporary animation resume by timing
             // Later on will be controlled by Animator
@@ -51,10 +65,10 @@ public class CachorroScript : MonoBehaviour
         state = CachorroStates.RUNNING;
     }
 
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
+    // void OnBecameInvisible()
+    // {
+        // Destroy(gameObject);
+    // }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -62,6 +76,10 @@ public class CachorroScript : MonoBehaviour
         {
             TriggerCollider.enabled = false;
             state = CachorroStates.ATTACKING;
+        }
+        if (other.CompareTag("KillPlane"))
+        {
+            Destroy(gameObject);
         }
     }
 }
