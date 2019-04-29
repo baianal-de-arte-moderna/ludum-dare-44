@@ -5,7 +5,7 @@ public static class GameData
 {
     public static float startHp = 60;
     public static float hp = 60;
-    public static float maxHp = 1000;
+    public static float maxHp = 600;
     public static JumpBehaviour jumpBehaviour = new RegularJumpBehaviour();
     public static bool springUpdate = false;
     public static Dictionary<string, float> damageList = initDamages();
@@ -20,14 +20,14 @@ public static class GameData
         damages["moneditaDe50Cientavitos"] = -50f;
         damages["notitaDeDinerito"] = -100f;
         damages["notitasDeDineritos"] = -300f;
-        damages["pedritaDeDiamantito"] = -600f;
-        damages["Bee"] = 12f;
-        damages["cachorro"] = 11f;
-        damages["lixeira"] = 9f;
-        damages["Lixo(Clone)"] = 4f;
-        damages["Boss"] = 4f;
-        damages["Sickle(Clone)"] = 6f;
-        damages["Hammer(Clone)"] = 26f;
+        damages["pedritaDeDiamantito"] = -500f;
+        damages["Bee"] = 10f;
+        damages["cachorro"] = 15f;
+        damages["lixeira"] = 10f;
+        damages["Lixo(Clone)"] = 5f;
+        damages["Boss"] = 25f;
+        damages["Sickle(Clone)"] = 10f;
+        damages["Hammer(Clone)"] = 30f;
         return damages;
     }
 }
