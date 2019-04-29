@@ -14,6 +14,7 @@ public class CachorroScript : MonoBehaviour
     InimigoBaseScript inimigoBase;
     CachorroStates state;
     Rigidbody2D rigid;
+    Animator anim;
     public Vector2 LeapDirection;
     public Collider2D TriggerCollider;
     int direction;
@@ -22,10 +23,12 @@ public class CachorroScript : MonoBehaviour
     {
         inimigoBase = GetComponent<InimigoBaseScript>();
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         originalScale = transform.localScale;
 
         state = CachorroStates.WAITING;
+        anim.Play("Idle");
         direction = -1;
     }
 
@@ -46,9 +49,9 @@ public class CachorroScript : MonoBehaviour
             var leapForce = LeapDirection.normalized * inimigoBase.speed * rigid.mass * 100f;
             leapForce.x *= direction;
             rigid.AddForce(leapForce);
+
             state = CachorroStates.WAITING;
-            // Temporary animation resume by timing
-            // Later on will be controlled by Animator
+            anim.Play("Idle");
             Invoke("LeapEnd", 1.2f);
         }
     }
@@ -56,12 +59,14 @@ public class CachorroScript : MonoBehaviour
     void LeapEnd()
     {
         state = CachorroStates.RUNNING;
+        anim.Play("Run");
         TriggerCollider.enabled = true;
     }
 
     void OnBecameVisible()
     {
         state = CachorroStates.RUNNING;
+        anim.Play("Run");
     }
 
     // void OnBecameInvisible()
@@ -75,6 +80,7 @@ public class CachorroScript : MonoBehaviour
         {
             TriggerCollider.enabled = false;
             state = CachorroStates.ATTACKING;
+            anim.Play("Attack");
         }
         if (other.CompareTag("KillPlane"))
         {
@@ -84,7 +90,7 @@ public class CachorroScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (Mathf.Abs(other.contacts[0].normal.x) >= 0.8f)
+        if (Mathf.Abs(other.contacts[0].normal.x) >= 0.9f)
         {
             direction = (int)Mathf.Sign(other.contacts[0].normal.x);
         }
