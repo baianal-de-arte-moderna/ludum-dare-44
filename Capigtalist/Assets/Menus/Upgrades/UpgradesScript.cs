@@ -31,12 +31,6 @@ public class UpgradesScript : MonoBehaviour
         }
     }
 
-    //public void OnRegularJumpButtonClicked()
-    //{
-    //    BuyJumpBehaviour(regularJumpBehaviour);
-    //    GameData.springUpdate = false;
-    //}
-
     public void OnSpringJumpButtonClicked()
     {
         if (!GameData.springUpdate)
@@ -85,7 +79,6 @@ public class UpgradesScript : MonoBehaviour
 
             GameData.jumpBehaviour = newJumpBehaviour;
             UpdatePriceTexts();
-
         }
     }
 }
