@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1335080939}
   - component: {fileID: 1335080940}
   - component: {fileID: 1335080941}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: moneditaDe1Cientavito
   m_TagString: Collect1Coin
   m_Icon: {fileID: 0}

@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 945761432}
   - component: {fileID: 945761431}
   - component: {fileID: 945761433}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: pedritaDeDiamantito
   m_TagString: CollectDiamond
   m_Icon: {fileID: 0}
@@ -163,11 +163,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -0.01468277, y: 0.000000059604645}
+  m_Size: {x: 0.7525437, y: 0.7525437}
   m_Direction: 0
 --- !u!212 &945761432
 SpriteRenderer:
@@ -206,7 +206,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -8679921720477084350, guid: 662470db24b2e8d498a482e4532acbce,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -214,7 +215,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &945761433

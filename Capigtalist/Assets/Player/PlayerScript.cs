@@ -49,34 +49,6 @@ public class PlayerScript : MonoBehaviour
         {
             Die();
         }
-        if (collision.CompareTag("Collect1Coin"))
-        {
-            playerAttributes.HealthChange(1);
-        }
-        if (collision.CompareTag("Collect3Coin"))
-        {
-            playerAttributes.HealthChange(3);
-        }
-        if (collision.CompareTag("Collect5Coin"))
-        {
-            playerAttributes.HealthChange(5);
-        }
-        if (collision.CompareTag("Collect50Coin"))
-        {
-            playerAttributes.HealthChange(50);
-        }
-        if (collision.CompareTag("CollectBill"))
-        {
-            playerAttributes.HealthChange(100);
-        }
-        if (collision.CompareTag("CollectBills"))
-        {
-            playerAttributes.HealthChange(300);
-        }
-        if (collision.CompareTag("CollectDiamond"))
-        {
-            playerAttributes.HealthChange(600);
-        }
     }
 
     public Vector2 GetCenter()

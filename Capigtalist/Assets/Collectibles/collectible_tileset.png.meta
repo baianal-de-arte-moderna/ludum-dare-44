@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -8679921720477084350
     second: collectible_tileset_7
+  - first:
+      213: 3032721561502403497
+    second: collectible_tileset_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -155,7 +158,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb06345abc5c4d946abb5f5467d414b5
+      spriteID: 4a35442de5498fe43a096a3f2ef5078d
       internalID: -1281166872041336511
       vertices: []
       indices: 
@@ -176,7 +179,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f42fbf6fca6b064d881856ab947ca33
+      spriteID: d4121650dbdc1514fa86540934213096
       internalID: -4815146772642678072
       vertices: []
       indices: 
@@ -197,7 +200,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cd063810110c5c459b0ac47f7d80d33
+      spriteID: ef4ae30a01675a746bed648efb396190
       internalID: -3912462574730779244
       vertices: []
       indices: 
@@ -218,7 +221,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52b755c072b56a14391f193f85e461b8
+      spriteID: e19ba703550f0364aad020a6eb98bee1
       internalID: -7907768049150863802
       vertices: []
       indices: 
@@ -239,7 +242,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bd79c28f34645142aae122286279554
+      spriteID: 9ec015b4c8f85fd40b66b752662d5b3b
       internalID: -7844011095877793446
       vertices: []
       indices: 
@@ -260,7 +263,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76c2f319788c71f4dbc51ec25476aabb
+      spriteID: e624059373c4cd241b212c65e09d1cf7
       internalID: 5073652375106099707
       vertices: []
       indices: 
@@ -281,7 +284,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ace7e8ee647e90e4090a5fadc1a9ff0a
+      spriteID: f813fb3435729184fb343909dbd74705
       internalID: -8141832838759515494
       vertices: []
       indices: 
@@ -289,6 +292,27 @@ TextureImporter:
       weights: []
     - serializedVersion: 2
       name: collectible_tileset_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345d03b7ef315414e8a8346a42bfaf3f
+      internalID: -8679921720477084350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: collectible_tileset_8
       rect:
         serializedVersion: 2
         x: 192
@@ -302,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8d3468f6ab459d4f9354a3e97198c16
-      internalID: -8679921720477084350
+      spriteID: 832012adb0478074fbc5b972e632eec2
+      internalID: 3032721561502403497
       vertices: []
       indices: 
       edges: []

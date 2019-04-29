@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 241874375}
   - component: {fileID: 241874376}
   - component: {fileID: 241874377}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: notitasDeDineritos
   m_TagString: CollectBills
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.005764991, y: -0.05764997}

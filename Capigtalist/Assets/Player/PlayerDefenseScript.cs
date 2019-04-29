@@ -33,9 +33,10 @@ public class PlayerDefenseScript : MonoBehaviour
         }
     }
 
-    private void OnWeakPointTouch()
+    private void OnWeakPointTouch(float damage)
     {
-        if (!isInvincible)
+        Debug.Log("weak point touched");
+        if ((!isInvincible) && (damage > 0))
         {
             isInvincible = true;
             Task.Factory.StartNew(async () =>
@@ -43,8 +44,7 @@ public class PlayerDefenseScript : MonoBehaviour
                 await Task.Delay(playerAttributes.invincibilityCooldownMillis);
                 isInvincible = false;
             });
-
-            playerAttributes.HealthChange(-1);
         }
+        playerAttributes.HealthChange(-damage);
     }
 }
