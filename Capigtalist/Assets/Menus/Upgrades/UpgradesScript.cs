@@ -5,9 +5,7 @@ using UnityEngine.UI;
 public class UpgradesScript : MonoBehaviour
 {
     [SerializeField]
-    private UpgradeButton regularJumpButton;
-    [SerializeField]
-    private UpgradeButton springJumpButton;
+    private Text springJumpButton;
 
     private PlayerAttributes playerAttributes;
     private PlayerScript player;
@@ -26,23 +24,26 @@ public class UpgradesScript : MonoBehaviour
 
     private void Start()
     {
-        UpdateJumpPriceTexts();
+        UpdatePriceTexts();
         if (GameObject.FindGameObjectWithTag("Upgrade") != null)
         {
             upgrade1Renderer = GameObject.FindGameObjectWithTag("Upgrade").GetComponent<SpriteRenderer>();
         }
     }
 
-    public void OnRegularJumpButtonClicked()
-    {
-        BuyJumpBehaviour(regularJumpBehaviour);
-        GameData.springUpdate = false;
-    }
+    //public void OnRegularJumpButtonClicked()
+    //{
+    //    BuyJumpBehaviour(regularJumpBehaviour);
+    //    GameData.springUpdate = false;
+    //}
 
     public void OnSpringJumpButtonClicked()
     {
-        BuyJumpBehaviour(springJumpBehaviour);
-        GameData.springUpdate = true;
+        if (!GameData.springUpdate)
+        {
+            BuyJumpBehaviour(springJumpBehaviour);
+            GameData.springUpdate = true;
+        }
     }
 
     public void OnPlayButtonClicked()
@@ -50,15 +51,20 @@ public class UpgradesScript : MonoBehaviour
         SceneManager.LoadScene("Level1Scene");
     }
 
-    private void UpdateJumpPriceTexts()
+    private void UpdatePriceTexts()
     {
-        float regularJumpPrice = CalculateJumpPrice(regularJumpBehaviour);
-        bool regularJumpSelected = GameData.jumpBehaviour.GetType() == regularJumpBehaviour.GetType();
-        regularJumpButton.UpdateButton(regularJumpPrice, regularJumpSelected);
-
-        float springJumpPrice = CalculateJumpPrice(springJumpBehaviour);
+        // Spring Jump
         bool springJumpSelected = GameData.jumpBehaviour.GetType() == springJumpBehaviour.GetType();
-        springJumpButton.UpdateButton(springJumpPrice, springJumpSelected);
+        springJumpButton.text = (springJumpSelected)? "Purchased": springJumpBehaviour.GetPriceText();
+
+        // Coin Shooter
+        // TODO
+
+        // Piggy Wing
+        // TODO
+
+        // Atomic Pig
+        // TODO
     }
 
     private float CalculateJumpPrice(JumpBehaviour jumpBehaviour)
@@ -78,7 +84,7 @@ public class UpgradesScript : MonoBehaviour
             playerAttributes.HealthChange(moneyDelta);
 
             GameData.jumpBehaviour = newJumpBehaviour;
-            UpdateJumpPriceTexts();
+            UpdatePriceTexts();
 
         }
     }
