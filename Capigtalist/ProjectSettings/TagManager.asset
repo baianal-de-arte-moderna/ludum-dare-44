@@ -7,8 +7,14 @@ TagManager:
   - CameraCollider
   - KillPlane
   - Floor
-  - CollectMoney
   - Feet
+  - Collect3Coin
+  - CollectDiamond
+  - CollectBill
+  - CollectBills
+  - Collect1Coin
+  - Collect5Coin
+  - Collect50Coin
   layers:
   - Default
   - TransparentFX
