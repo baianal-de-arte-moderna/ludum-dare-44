@@ -15,6 +15,7 @@ TagManager:
   - Collect1Coin
   - Collect5Coin
   - Collect50Coin
+  - Upgrade
   layers:
   - Default
   - TransparentFX

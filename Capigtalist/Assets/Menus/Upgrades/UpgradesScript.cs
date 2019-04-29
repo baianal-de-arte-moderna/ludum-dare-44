@@ -10,9 +10,11 @@ public class UpgradesScript : MonoBehaviour
     private UpgradeButton springJumpButton;
 
     private PlayerAttributes playerAttributes;
+    private PlayerScript player;
 
     private RegularJumpBehaviour regularJumpBehaviour = new RegularJumpBehaviour();
     private SpringJumpBehaviour springJumpBehaviour = new SpringJumpBehaviour();
+    private SpriteRenderer upgrade1Renderer;
 
     private void Awake()
     {
@@ -25,16 +27,19 @@ public class UpgradesScript : MonoBehaviour
     private void Start()
     {
         UpdateJumpPriceTexts();
+        upgrade1Renderer = GameObject.FindGameObjectWithTag("Upgrade").GetComponent<SpriteRenderer>();
     }
 
     public void OnRegularJumpButtonClicked()
     {
         BuyJumpBehaviour(regularJumpBehaviour);
+        GameData.springUpdate = false;
     }
 
     public void OnSpringJumpButtonClicked()
     {
         BuyJumpBehaviour(springJumpBehaviour);
+        GameData.springUpdate = true;
     }
 
     public void OnPlayButtonClicked()
@@ -71,6 +76,7 @@ public class UpgradesScript : MonoBehaviour
 
             GameData.jumpBehaviour = newJumpBehaviour;
             UpdateJumpPriceTexts();
+
         }
     }
 }
