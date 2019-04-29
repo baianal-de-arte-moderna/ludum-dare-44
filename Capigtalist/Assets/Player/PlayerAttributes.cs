@@ -14,6 +14,7 @@ public class PlayerAttributes : MonoBehaviour
     public float maxHp;
 
     public float speed;
+    public float jumpSpeed;
     public int invincibilityCooldownMillis;
 
     private void Awake()

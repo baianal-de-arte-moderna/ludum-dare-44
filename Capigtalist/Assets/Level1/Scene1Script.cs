@@ -21,7 +21,7 @@ public class Scene1Script : MonoBehaviour
 
     [Space(10)]
     [Header("Boss Fields")]
-    public Transform bossSpawn;
+    public BossRoomScript bossSpawn;
 
     int lixeiraIndex;
     int cachorroIndex;
@@ -34,6 +34,8 @@ public class Scene1Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bossSpawn.onBossTriggered += SpawnBoss;
+
         StartCoroutine("spawner");
     }
 
@@ -43,9 +45,6 @@ public class Scene1Script : MonoBehaviour
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
 
         yield return new WaitForSeconds(0.05f);
-
-        SceneManager.sceneLoaded += SetBossScript;
-        SceneManager.LoadScene(10, LoadSceneMode.Additive);
 
         // BG
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
@@ -108,7 +107,7 @@ public class Scene1Script : MonoBehaviour
     {
         SceneManager.sceneLoaded -= SetBossScript;
         var rootObject = scene.GetRootGameObjects()[0];
-        rootObject.transform.position = bossSpawn.position;
+        rootObject.transform.position = bossSpawn.transform.position;
     }
     public void SetLixeiraScript(Scene scene, LoadSceneMode mode)
     {
@@ -139,5 +138,11 @@ public class Scene1Script : MonoBehaviour
         {
             SceneManager.sceneLoaded -= SetMoedaScript;
         }
+    }
+
+    public void SpawnBoss()
+    {
+        SceneManager.sceneLoaded += SetBossScript;
+        SceneManager.LoadScene(10, LoadSceneMode.Additive);
     }
 }

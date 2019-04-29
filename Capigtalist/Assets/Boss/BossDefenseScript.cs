@@ -4,10 +4,11 @@ using UnityEngine;
 public class BossDefenseScript : BossScript
 {
     private bool isInvincible = false;
+    HeadScript headScript;
 
     private void Start()
     {
-        HeadScript headScript = GetComponentInChildren<HeadScript>();
+        headScript = GetComponentInChildren<HeadScript>();
         headScript.OnHeadTouch += OnPlayerHit;
     }
 
