@@ -6,6 +6,7 @@ public class PlayerDefenseScript : MonoBehaviour
 {
     private PlayerAttributes playerAttributes;
     private SpriteRenderer playerRenderer;
+    ParticleSystem damageParticles;
 
     private bool isInvincible = false;
 
@@ -17,6 +18,8 @@ public class PlayerDefenseScript : MonoBehaviour
 
     private void Start()
     {
+        damageParticles = GetComponentInChildren<ParticleSystem>();
+
         PlayerWeakPoint playerWeakPoint = GetComponentInChildren<PlayerWeakPoint>();
         playerWeakPoint.OnPlayerWeakPointTouch += OnWeakPointTouch;
     }
@@ -38,6 +41,7 @@ public class PlayerDefenseScript : MonoBehaviour
         if ((!isInvincible) && (damage > 0))
         {
             isInvincible = true;
+            damageParticles.Play();
             Task.Factory.StartNew(async () =>
             {
                 await Task.Delay(playerAttributes.invincibilityCooldownMillis);
