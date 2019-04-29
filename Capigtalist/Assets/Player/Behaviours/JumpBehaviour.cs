@@ -8,5 +8,7 @@ public abstract class JumpBehaviour
         rigid.velocity = new Vector2(rigid.velocity.x, JumpModifier() * playerAttributes.jumpSpeed * rigid.gravityScale / 2);
     }
 
+    abstract public float GetPrice();
+
     abstract protected float JumpModifier();
 }

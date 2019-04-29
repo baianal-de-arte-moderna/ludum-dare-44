@@ -23,7 +23,7 @@ public class PlayerAttributes : MonoBehaviour
         maxHp = GameData.maxHp;
     }
 
-    public void HealthChange(int value)
+    public void HealthChange(float value)
     {
         hp = Mathf.Min(hp + value, maxHp);
         OnPlayerHealthChange?.Invoke();
