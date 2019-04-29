@@ -6,7 +6,7 @@ public class SpringJumpBehaviour : JumpBehaviour
 {
     public override float GetPrice()
     {
-        return 0.2f;
+        return 20f;
     }
 
     public override string GetPriceText()
