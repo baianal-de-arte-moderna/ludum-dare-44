@@ -35,7 +35,6 @@ public class PlayerDefenseScript : MonoBehaviour
 
     private void OnWeakPointTouch(float damage)
     {
-        Debug.Log("weak point touched");
         if ((!isInvincible) && (damage > 0))
         {
             isInvincible = true;
