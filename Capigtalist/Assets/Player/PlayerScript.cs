@@ -30,6 +30,7 @@ public class PlayerScript : MonoBehaviour
         playerRenderer = GetComponent<SpriteRenderer>();
 
         jumpBehaviour = GameData.jumpBehaviour;
+        GameObject.FindGameObjectWithTag("Upgrade").GetComponent<SpriteRenderer>().enabled = GameData.springUpdate;
     }
 
     private void Start()
