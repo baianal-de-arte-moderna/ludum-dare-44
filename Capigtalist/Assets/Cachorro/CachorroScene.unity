@@ -270,9 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45aa1566ced89a40b0502ba04b2ddf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeapDirection: {x: -0.75, y: 1}
+  LeapDirection: {x: 0.75, y: 1}
   TriggerCollider: {fileID: 1768417392}
-  direction: 0
 --- !u!114 &153173297
 MonoBehaviour:
   m_ObjectHideFlags: 0

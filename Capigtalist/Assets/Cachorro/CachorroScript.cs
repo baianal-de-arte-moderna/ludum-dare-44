@@ -31,7 +31,7 @@ public class CachorroScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        direction = rigid.velocity.x > 0f? 1: -1;
+        direction = rigid.velocity.x > 1f? 1: -1;
         transform.localScale = new Vector3(
             originalScale.x * -direction,
             originalScale.y,
@@ -44,7 +44,9 @@ public class CachorroScript : MonoBehaviour
         else if (state == CachorroStates.ATTACKING)
         {
             TriggerCollider.enabled = false;
-            rigid.AddForce(LeapDirection.normalized * inimigoBase.speed * rigid.mass * 100f);
+            var leapForce = LeapDirection.normalized * inimigoBase.speed * rigid.mass * 100f;
+            leapForce.x *= direction;
+            rigid.AddForce(leapForce);
             state = CachorroStates.WAITING;
             // Temporary animation resume by timing
             // Later on will be controlled by Animator
@@ -63,10 +65,10 @@ public class CachorroScript : MonoBehaviour
         state = CachorroStates.RUNNING;
     }
 
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
+    // void OnBecameInvisible()
+    // {
+        // Destroy(gameObject);
+    // }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -74,6 +76,10 @@ public class CachorroScript : MonoBehaviour
         {
             TriggerCollider.enabled = false;
             state = CachorroStates.ATTACKING;
+        }
+        if (other.CompareTag("KillPlane"))
+        {
+            Destroy(gameObject);
         }
     }
 }

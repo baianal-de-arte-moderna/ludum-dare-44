@@ -2,9 +2,18 @@
 
 public class KeyboardInputType : InputType
 {
+    // Jump Control
+    bool wasJumping;
     protected override bool Jump()
     {
-        return Input.GetAxisRaw("Jump") > 0;
+        bool isJumping = Input.GetAxisRaw("Jump") > 0;
+        if (wasJumping == false)
+        {
+            wasJumping = isJumping;
+            return isJumping;
+        }
+        wasJumping = isJumping;
+        return false;
     }
 
     protected override bool MoveLeft()
