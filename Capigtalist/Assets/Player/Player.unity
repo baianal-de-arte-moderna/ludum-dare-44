@@ -225,7 +225,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Follow: {fileID: 4910816969150128645}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 3
+    OrthographicSize: 4
     NearClipPlane: 0.65
     FarClipPlane: 5000
     Dutch: 0
@@ -542,8 +542,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.028519094, y: 0.47715053}
-  m_Size: {x: 1.3345612, y: 0.95431083}
+  m_Offset: {x: -0.018456638, y: 0.51892024}
+  m_Size: {x: 1.1600895, y: 0.960256}
   m_Direction: 1
 --- !u!114 &3421606661071743819
 MonoBehaviour:
@@ -560,7 +560,7 @@ MonoBehaviour:
   hp: 0
   maxHp: 0
   speed: 6
-  jumpSpeed: 10
+  jumpSpeed: 12
   invincibilityCooldownMillis: 2000
 --- !u!114 &4910816969150128644
 MonoBehaviour:
@@ -769,7 +769,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: -0.053108573, y: -0.05827181}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -780,5 +780,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.25}
+  m_Size: {x: 0.8027394, y: 0.16654363}
   m_EdgeRadius: 0

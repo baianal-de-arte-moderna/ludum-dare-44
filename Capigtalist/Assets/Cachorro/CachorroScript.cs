@@ -16,18 +16,30 @@ public class CachorroScript : MonoBehaviour
     Rigidbody2D rigid;
     public Vector2 LeapDirection;
     public Collider2D TriggerCollider;
+    int direction;
+    Vector3 originalScale;
     void Awake()
     {
         inimigoBase = GetComponent<InimigoBaseScript>();
         rigid = GetComponent<Rigidbody2D>();
+
+        originalScale = transform.localScale;
+
         state = CachorroStates.WAITING;
+        direction = -1;
     }
 
     void FixedUpdate()
     {
+        direction = rigid.velocity.x > 0f? 1: -1;
+        transform.localScale = new Vector3(
+            originalScale.x * -direction,
+            originalScale.y,
+            1f);
+
         if (state == CachorroStates.RUNNING)
         {
-            rigid.velocity = new Vector2(-inimigoBase.speed, rigid.velocity.y);
+            rigid.velocity = new Vector2(inimigoBase.speed * direction, rigid.velocity.y);
         } 
         else if (state == CachorroStates.ATTACKING)
         {
