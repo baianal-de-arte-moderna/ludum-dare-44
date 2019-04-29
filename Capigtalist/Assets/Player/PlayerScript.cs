@@ -83,6 +83,7 @@ public class PlayerScript : MonoBehaviour
 
     public void Die()
     {
+        playerAttributes.hp = GameData.startHp;
         SceneManager.LoadScene("GameOverScene");
     }
 }
