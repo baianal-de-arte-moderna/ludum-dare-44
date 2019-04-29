@@ -26,6 +26,7 @@ public class Scene1Script : MonoBehaviour
 
     int lixeiraIndex;
     int cachorroIndex;
+    int abelhaIndex;
     int moedaIndex;
     
     [Space(10)]
@@ -74,6 +75,20 @@ public class Scene1Script : MonoBehaviour
             foreach (var l in cachorroSpawn)
             {
                 SceneManager.LoadScene(4, LoadSceneMode.Additive);
+                yield return new WaitForSeconds(0.02f);
+            }
+        }
+
+        //Wait to start Abelha
+        yield return new WaitForSeconds(0.05f);
+
+        if (abelhaSpawn.Length > 0)
+        {
+            abelhaIndex = 0;
+            SceneManager.sceneLoaded += SetAbelhaScript;
+            foreach (var l in abelhaSpawn)
+            {
+                SceneManager.LoadScene(17, LoadSceneMode.Additive);
                 yield return new WaitForSeconds(0.02f);
             }
         }
@@ -129,6 +144,16 @@ public class Scene1Script : MonoBehaviour
         if (cachorroIndex >= cachorroSpawn.Length)
         {
             SceneManager.sceneLoaded -= SetCachorroScript;
+        }
+    }
+    public void SetAbelhaScript(Scene scene, LoadSceneMode mode)
+    {
+        var rootObject = scene.GetRootGameObjects()[0];
+        rootObject.transform.position = abelhaSpawn[abelhaIndex].position;
+        abelhaIndex++;
+        if (abelhaIndex >= abelhaSpawn.Length)
+        {
+            SceneManager.sceneLoaded -= SetAbelhaScript;
         }
     }
     public void SetMoedaScript(Scene scene, LoadSceneMode mode)
