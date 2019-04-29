@@ -18,6 +18,7 @@ public class Scene1Script : MonoBehaviour
     [Space(10)]
     [Header("Collect Fields")]
     public Transform[] moedaSpawn;
+    public Transform[] diamondSpawn;
     public int[] listOfCollectibles;
 
     [Space(10)]
@@ -28,7 +29,8 @@ public class Scene1Script : MonoBehaviour
     int cachorroIndex;
     int abelhaIndex;
     int moedaIndex;
-    
+    int diamondIndex;
+
     [Space(10)]
     [Header("Loading Fields")]
     public LoadingScreenScript loadingScreen;
@@ -93,7 +95,7 @@ public class Scene1Script : MonoBehaviour
             }
         }
 
-        //Wait to start Collectibol
+        //Wait to start Collectible
         yield return new WaitForSeconds(0.05f);
 
         if (moedaSpawn.Length > 0)
@@ -104,6 +106,17 @@ public class Scene1Script : MonoBehaviour
             {
                 var chosenOne = listOfCollectibles[Random.Range(0, listOfCollectibles.Length)];
                 SceneManager.LoadScene(chosenOne, LoadSceneMode.Additive);
+                yield return new WaitForSeconds(0.02f);
+            }
+        }
+
+        if (diamondSpawn.Length > 0)
+        {
+            diamondIndex = 0;
+            SceneManager.sceneLoaded += SetDiamondScript;
+            foreach (var l in diamondSpawn)
+            {
+                SceneManager.LoadScene(16, LoadSceneMode.Additive);
                 yield return new WaitForSeconds(0.02f);
             }
         }
@@ -166,7 +179,16 @@ public class Scene1Script : MonoBehaviour
             SceneManager.sceneLoaded -= SetMoedaScript;
         }
     }
-
+    public void SetDiamondScript(Scene scene, LoadSceneMode mode)
+    {
+        var rootObject = scene.GetRootGameObjects()[0];
+        rootObject.transform.position = diamondSpawn[diamondIndex].position;
+        diamondIndex++;
+        if (diamondIndex >= diamondSpawn.Length)
+        {
+            SceneManager.sceneLoaded -= SetDiamondScript;
+        }
+    }
     public void SpawnBoss()
     {
         SceneManager.sceneLoaded += SetBossScript;

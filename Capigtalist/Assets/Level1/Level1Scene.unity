@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73158627}
   m_Layer: 0
-  m_Name: Moeda (24)
+  m_Name: CoinSpanw14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 379833471}
   m_Layer: 0
-  m_Name: Collectibols
+  m_Name: CoinsSpawners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,6 +385,37 @@ Transform:
   - {fileID: 709345687}
   - {fileID: 1137877359}
   - {fileID: 73158627}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &489443833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 489443834}
+  m_Layer: 0
+  m_Name: DiamondSpawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &489443834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489443833}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 73.8544, y: 20.496925, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2071182470}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -537,7 +568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603585816}
   m_Layer: 0
-  m_Name: Moeda (1)
+  m_Name: CoinSpanw1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 606191279}
   m_Layer: 0
-  m_Name: Moeda (3)
+  m_Name: CoinSpanw2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,7 +663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 620996787}
   m_Layer: 0
-  m_Name: Moeda (8)
+  m_Name: CoinSpanw5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3123,7 +3154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 709345687}
   m_Layer: 0
-  m_Name: Moeda (19)
+  m_Name: CoinSpanw12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3153,7 +3184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 741557163}
   m_Layer: 0
-  m_Name: Moeda (12)
+  m_Name: CoinSpanw8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19102,7 +19133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1137877359}
   m_Layer: 0
-  m_Name: Moeda (22)
+  m_Name: CoinSpanw13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19311,7 +19342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1202092118}
   m_Layer: 0
-  m_Name: Moeda (4)
+  m_Name: CoinSpanw3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19424,7 +19455,7 @@ RectTransform:
   m_Children:
   - {fileID: 1497768342}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19507,6 +19538,8 @@ MonoBehaviour:
   - {fileID: 709345687}
   - {fileID: 1137877359}
   - {fileID: 73158627}
+  diamondSpawn:
+  - {fileID: 2071182470}
   listOfCollectibles: 050000000d0000000e0000000f000000
   bossSpawn: {fileID: 1480476910}
   loadingScreen: {fileID: 1262180338}
@@ -19534,7 +19567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367100888}
   m_Layer: 0
-  m_Name: Moeda (13)
+  m_Name: CoinSpanw9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19564,7 +19597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1381602682}
   m_Layer: 0
-  m_Name: Moeda (9)
+  m_Name: CoinSpanw6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70982,7 +71015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1853215769}
   m_Layer: 0
-  m_Name: Moeda (10)
+  m_Name: CoinSpanw7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71044,7 +71077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2000784090}
   m_Layer: 0
-  m_Name: Moeda (6)
+  m_Name: CoinSpanw4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71109,7 +71142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2014121148}
   m_Layer: 0
-  m_Name: Moeda (14)
+  m_Name: CoinSpanw10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71128,6 +71161,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 379833471}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2071182469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2071182470}
+  m_Layer: 0
+  m_Name: DiamontSpawn1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2071182470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071182469}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 489443834}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085219526
 GameObject:
@@ -71262,7 +71325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125958408}
   m_Layer: 0
-  m_Name: Moeda (17)
+  m_Name: CoinSpanw11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
