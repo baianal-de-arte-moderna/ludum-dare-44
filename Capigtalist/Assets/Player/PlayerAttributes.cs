@@ -25,15 +25,11 @@ public class PlayerAttributes : MonoBehaviour
 
     public void HealthChange(float value)
     {
-        hp = Mathf.Min(hp + value, maxHp);
-        if (hp!=0) {
-            hp = Mathf.Max(hp, 0);
-        }
-        OnPlayerHealthChange?.Invoke();
-
-        if (hp < 0)
+        if((hp==0) && (value<0))
         {
             OnPlayerDeath?.Invoke();
         }
+        hp = Mathf.Min(hp + value, maxHp);
+        OnPlayerHealthChange?.Invoke();
     }
 }

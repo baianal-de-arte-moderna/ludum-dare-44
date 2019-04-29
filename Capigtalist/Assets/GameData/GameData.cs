@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public static class GameData
 {
+    public static float startHp = 60;
     public static float hp = 60;
     public static float maxHp = 1000;
     public static JumpBehaviour jumpBehaviour = new RegularJumpBehaviour();
