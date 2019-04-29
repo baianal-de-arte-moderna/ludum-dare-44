@@ -29,7 +29,7 @@ public class PlayerAttributes : MonoBehaviour
         {
             OnPlayerDeath?.Invoke();
         }
-        hp = Mathf.Min(hp + value, maxHp);
+        hp = Mathf.Max(0, Mathf.Min(hp + value, maxHp));
         OnPlayerHealthChange?.Invoke();
     }
 }
