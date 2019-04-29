@@ -27,7 +27,10 @@ public class UpgradesScript : MonoBehaviour
     private void Start()
     {
         UpdateJumpPriceTexts();
-        upgrade1Renderer = GameObject.FindGameObjectWithTag("Upgrade").GetComponent<SpriteRenderer>();
+        if (GameObject.FindGameObjectWithTag("Upgrade") != null)
+        {
+            upgrade1Renderer = GameObject.FindGameObjectWithTag("Upgrade").GetComponent<SpriteRenderer>();
+        }
     }
 
     public void OnRegularJumpButtonClicked()

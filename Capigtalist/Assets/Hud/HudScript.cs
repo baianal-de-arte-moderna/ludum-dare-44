@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HudScript : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class HudScript : MonoBehaviour
 
     private float minY;
     private float maxY;
+    public Text hpText;
+    private CultureInfo unitedStatesEnglishCulture = new CultureInfo("en-US");
 
     private void Awake()
     {
@@ -26,8 +30,9 @@ public class HudScript : MonoBehaviour
 
     private void HealthHudUpdate()
     {
-        float hpFraction = playerAttributes.hp / playerAttributes.maxHp;
-
+        float hp = playerAttributes.hp;
+        hpText.text = (hp / 100).ToString("C", unitedStatesEnglishCulture);
+        float hpFraction = hp / playerAttributes.maxHp;
         Vector3 vector = rectTransform.localPosition;
         vector.Set(vector.x, minY + (maxY - minY) * hpFraction, vector.z);
         rectTransform.localPosition = vector;

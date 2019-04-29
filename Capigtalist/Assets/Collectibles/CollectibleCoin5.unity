@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 610825957}
   - component: {fileID: 610825956}
   - component: {fileID: 610825958}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: moneditaDe5Cientavitos
   m_TagString: Collect5Coin
   m_Icon: {fileID: 0}

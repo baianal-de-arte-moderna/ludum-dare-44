@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1067025889}
   - component: {fileID: 1067025890}
   - component: {fileID: 1067025888}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: moneditaDe3Cientavitos
   m_TagString: Collect3Coin
   m_Icon: {fileID: 0}

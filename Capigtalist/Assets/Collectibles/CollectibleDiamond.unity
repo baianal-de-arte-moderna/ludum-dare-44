@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 945761432}
   - component: {fileID: 945761431}
   - component: {fileID: 945761433}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: pedritaDeDiamantito
   m_TagString: CollectDiamond
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.01468277, y: 0.000000059604645}
