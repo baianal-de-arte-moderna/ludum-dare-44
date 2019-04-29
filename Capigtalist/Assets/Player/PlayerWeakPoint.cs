@@ -8,7 +8,6 @@ public class PlayerWeakPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         OnPlayerWeakPointTouch?.Invoke(GameData.damageList[collision.gameObject.name]);
     }
 }
