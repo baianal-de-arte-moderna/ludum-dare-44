@@ -131,9 +131,9 @@ GameObject:
   - component: {fileID: 200443415}
   - component: {fileID: 200443414}
   - component: {fileID: 200443413}
-  - component: {fileID: 200443412}
   - component: {fileID: 200443411}
   - component: {fileID: 200443410}
+  - component: {fileID: 200443412}
   m_Layer: 12
   m_Name: lixeira
   m_TagString: Untagged
@@ -171,8 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   health: 0
---- !u!61 &200443412
-BoxCollider2D:
+--- !u!70 &200443412
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -184,19 +184,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0020239055, y: 0.229761}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.5, y: 0.5}
-    newSize: {x: 0.5, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.36642212, y: 0.459522}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.00485159, y: 0.21677503}
+  m_Size: {x: 0.3059348, y: 0.40634617}
+  m_Direction: 0
 --- !u!50 &200443413
 Rigidbody2D:
   serializedVersion: 4
@@ -311,8 +301,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
-  m_Size: {x: 5, y: 1}
+  m_Offset: {x: 0.000000028717068, y: 0.24089625}
+  m_Size: {x: 5.000003, y: 1.6920984}
   m_Direction: 1
 --- !u!4 &1993281337
 Transform:
