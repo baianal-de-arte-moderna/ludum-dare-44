@@ -39,6 +39,8 @@ public class BossDefenseScript : BossScript
             if (bossAttributes.hitPoints <= 0)
             {
                 Destroy(gameObject);
+                // TODO: Load End-Level Scene
+                MainMenuScript.RestartGame();
             }
         }
     }

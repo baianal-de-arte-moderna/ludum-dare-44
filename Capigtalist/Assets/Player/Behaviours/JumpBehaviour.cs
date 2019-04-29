@@ -9,6 +9,7 @@ public abstract class JumpBehaviour
     }
 
     abstract public float GetPrice();
+    abstract public string GetPriceText();
 
     abstract protected float JumpModifier();
 }
