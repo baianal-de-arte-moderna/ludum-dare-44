@@ -31,7 +31,6 @@ public class CachorroScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        direction = rigid.velocity.x > 1f? 1: -1;
         transform.localScale = new Vector3(
             originalScale.x * -direction,
             originalScale.y,
@@ -80,6 +79,14 @@ public class CachorroScript : MonoBehaviour
         if (other.CompareTag("KillPlane"))
         {
             Destroy(gameObject);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (Mathf.Abs(other.contacts[0].normal.x) >= 0.8f)
+        {
+            direction = (int)Mathf.Sign(other.contacts[0].normal.x);
         }
     }
 }

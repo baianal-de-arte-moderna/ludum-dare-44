@@ -62,8 +62,8 @@ public class BeeScript : MonoBehaviour
 
                 if (shouldChangeVelocity == 0)
                 {
-                    velX = Random.Range(-100,100) / 10;
-                    velY = Random.Range(-100,100) / 10;
+                    velX = Random.Range(-2f,2f);
+                    velY = Random.Range(-2f,2f);
                 }
                 shouldChangeVelocity = (shouldChangeVelocity + 1) % velocityChangeFrequency;
 
