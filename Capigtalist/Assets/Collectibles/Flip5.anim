@@ -51,28 +51,28 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_FlipX
-    path: moneditaDe1Cientavito
+    path: moneditaDe5Cientavitos
     classID: 212
     script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -4276760799471239746, guid: d90d3ec67a591c340b1f15a2abbe8c59,
+      value: {fileID: -1383950643518726761, guid: d90d3ec67a591c340b1f15a2abbe8c59,
         type: 3}
     - time: 0.25
-      value: {fileID: -8783271214009510282, guid: e4af933a2bf0ac44281954959cabc401,
+      value: {fileID: 6360013668997334066, guid: e4af933a2bf0ac44281954959cabc401,
         type: 3}
     - time: 0.5
-      value: {fileID: 1609018972703395118, guid: de36cec4f0fb6f549b0c16eb1a9cabb1,
+      value: {fileID: 2115556968353970640, guid: de36cec4f0fb6f549b0c16eb1a9cabb1,
         type: 3}
     - time: 0.75
-      value: {fileID: -8783271214009510282, guid: e4af933a2bf0ac44281954959cabc401,
+      value: {fileID: 6360013668997334066, guid: e4af933a2bf0ac44281954959cabc401,
         type: 3}
     - time: 1
-      value: {fileID: -4276760799471239746, guid: d90d3ec67a591c340b1f15a2abbe8c59,
+      value: {fileID: -1383950643518726761, guid: d90d3ec67a591c340b1f15a2abbe8c59,
         type: 3}
     attribute: m_Sprite
-    path: moneditaDe1Cientavito
+    path: moneditaDe5Cientavitos
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 12
@@ -83,25 +83,25 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 360783076
+      path: 3212464905
       attribute: 555744692
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 360783076
+      path: 3212464905
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -4276760799471239746, guid: d90d3ec67a591c340b1f15a2abbe8c59, type: 3}
-    - {fileID: -8783271214009510282, guid: e4af933a2bf0ac44281954959cabc401, type: 3}
-    - {fileID: 1609018972703395118, guid: de36cec4f0fb6f549b0c16eb1a9cabb1, type: 3}
-    - {fileID: -8783271214009510282, guid: e4af933a2bf0ac44281954959cabc401, type: 3}
-    - {fileID: -4276760799471239746, guid: d90d3ec67a591c340b1f15a2abbe8c59, type: 3}
+    - {fileID: -1383950643518726761, guid: d90d3ec67a591c340b1f15a2abbe8c59, type: 3}
+    - {fileID: 6360013668997334066, guid: e4af933a2bf0ac44281954959cabc401, type: 3}
+    - {fileID: 2115556968353970640, guid: de36cec4f0fb6f549b0c16eb1a9cabb1, type: 3}
+    - {fileID: 6360013668997334066, guid: e4af933a2bf0ac44281954959cabc401, type: 3}
+    - {fileID: -1383950643518726761, guid: d90d3ec67a591c340b1f15a2abbe8c59, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -157,7 +157,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_FlipX
-    path: moneditaDe1Cientavito
+    path: moneditaDe5Cientavitos
     classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves: []
