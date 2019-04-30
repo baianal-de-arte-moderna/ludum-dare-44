@@ -181,8 +181,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1335080938}
   - component: {fileID: 1335080939}
-  - component: {fileID: 1335080940}
   - component: {fileID: 1335080941}
+  - component: {fileID: 1335080940}
   m_Layer: 17
   m_Name: moneditaDe1Cientavito
   m_TagString: Collect1Coin
@@ -241,7 +241,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7907768049150863802, guid: 662470db24b2e8d498a482e4532acbce,
+  m_Sprite: {fileID: -4276760799471239746, guid: d90d3ec67a591c340b1f15a2abbe8c59,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -253,8 +253,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &1335080940
-CapsuleCollider2D:
+--- !u!58 &1335080940
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -263,12 +263,12 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010265201, y: 0.00021377206}
-  m_Size: {x: 0.30154008, y: 0.30154008}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.125
 --- !u!114 &1335080941
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -130,8 +130,8 @@ GameObject:
   m_Component:
   - component: {fileID: 610825955}
   - component: {fileID: 610825957}
-  - component: {fileID: 610825956}
   - component: {fileID: 610825958}
+  - component: {fileID: 610825956}
   m_Layer: 17
   m_Name: moneditaDe5Cientavitos
   m_TagString: Collect5Coin
@@ -153,8 +153,8 @@ Transform:
   m_Father: {fileID: 1672800041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &610825956
-CapsuleCollider2D:
+--- !u!58 &610825956
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -166,9 +166,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0048071444, y: -0.004807234}
-  m_Size: {x: 0.74036056, y: 0.7404103}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.28
 --- !u!212 &610825957
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4815146772642678072, guid: 662470db24b2e8d498a482e4532acbce,
+  m_Sprite: {fileID: -1383950643518726761, guid: d90d3ec67a591c340b1f15a2abbe8c59,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -272,7 +272,7 @@ Animator:
   m_GameObject: {fileID: 1672800040}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c0e57ae4812ca9c4e8320e29d789227b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8471ef52f7d3b484e9891ac7555b26ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
