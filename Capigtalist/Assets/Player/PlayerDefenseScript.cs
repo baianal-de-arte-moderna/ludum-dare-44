@@ -47,7 +47,11 @@ public class PlayerDefenseScript : MonoBehaviour
                 await Task.Delay(playerAttributes.invincibilityCooldownMillis);
                 isInvincible = false;
             });
+            playerAttributes.HealthChange(-damage);
         }
-        playerAttributes.HealthChange(-damage);
+        else if (damage < 0)
+        {
+            playerAttributes.HealthChange(-damage);
+        }
     }
 }
