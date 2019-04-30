@@ -5,6 +5,7 @@ using UnityEngine;
 public class BeeScript : MonoBehaviour
 {
     public Rigidbody2D body;
+    Animator anim;
     int shouldChangeVelocity = 0;
     float velX;
     float velY;
@@ -38,6 +39,7 @@ public class BeeScript : MonoBehaviour
     void Awake()
     {
         state = BeeState.FLYING;
+        anim = GetComponent<Animator>();
     }
 
     void Start()
@@ -52,6 +54,7 @@ public class BeeScript : MonoBehaviour
         setBoundaries();
         initialPos = body.transform.position;
         shouldDamage = true;
+        anim.Play("Idle");
     }
 
     void FixedUpdate()
@@ -151,6 +154,7 @@ public class BeeScript : MonoBehaviour
         {
             playerPosition = other.transform.position;
             state = BeeState.ATTACKING;
+            anim.Play("Attack");
         }
     }
 
@@ -159,6 +163,7 @@ public class BeeScript : MonoBehaviour
         if (state == BeeState.ATTACKING || state == BeeState.IDLE)
         {
             state = BeeState.START_RECOVER;
+            anim.Play("Idle");
         }
     }
 
@@ -167,6 +172,7 @@ public class BeeScript : MonoBehaviour
         if (state == BeeState.ATTACKING || state == BeeState.IDLE)
         {
             state = BeeState.START_RECOVER;
+            anim.Play("Idle");
         }
     }
 }
