@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     private PlayerAttributes playerAttributes;
     private SpriteRenderer playerRenderer;
     private PlayerFeetScript feet;
+    private SpriteRenderer upgrade1Renderer;
 
     private JumpBehaviour jumpBehaviour;
 
@@ -41,6 +42,10 @@ public class PlayerScript : MonoBehaviour
         input.OnMoveStopInputEvent += OnMoveStop;
         playerAttributes.OnPlayerDeath += Die;
         feet.onBounce += OnJump;
+        if (GameObject.FindGameObjectWithTag("Upgrade") != null)
+        {
+            upgrade1Renderer = GameObject.FindGameObjectWithTag("Upgrade").GetComponent<SpriteRenderer>();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,12 +73,14 @@ public class PlayerScript : MonoBehaviour
     {
         rigid.velocity = new Vector2(-playerAttributes.speed, rigid.velocity.y);
         playerRenderer.flipX = true;
+        upgrade1Renderer.flipX = true;
     }
 
     private void OnMoveRight()
     {
         rigid.velocity = new Vector2(playerAttributes.speed, rigid.velocity.y);
         playerRenderer.flipX = false;
+        upgrade1Renderer.flipX = false;
     }
 
     private void OnMoveStop()
